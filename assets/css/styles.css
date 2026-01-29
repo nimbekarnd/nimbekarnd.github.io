@@ -68,3 +68,9 @@ body{
   margin-bottom:12px;
   line-height:1.4;
 }
+/* Buttons hover */
+.btn:hover{
+  transform:translateY(-2px);
+  transition:140ms ease;
+  border-color:rgba(122,162,255,0.35);
+}
