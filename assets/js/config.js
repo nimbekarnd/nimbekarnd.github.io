@@ -1,7 +1,7 @@
 window.RESUME_CONFIG = {
   githubUsername: "nimbekarnd",
   featuredRepos: [],
-  additionalReposCount: 6,
+  additionalReposCount: 10,
   profile: {
     name: "Nupur Nimbekar",
     title: "Robotics Software Engineer",
