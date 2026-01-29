@@ -1,1 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume | Home</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/config.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="name" data-brand-name>Loading…</div>
+        <div class="title" data-brand-title></div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h1 data-name>Your Name</h1>
+        <div class="small">
+          <span data-title></span> · <span data-location></span>
+        </div>
+        <p style="margin-top:12px" data-tagline></p>
+
+        <div class="actions">
+          <a class="btn primary" data-link-github target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" data-link-linkedin target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" data-link-website target="_blank" rel="noreferrer">Website</a>
+        </div>
+
+        <div class="pills" data-skills></div>
+      </div>
+
+      <div class="card">
+        <h2>Featured Projects</h2>
+        <div class="small">Selected repositories from my GitHub profile.</div>
+        <div style="height:12px"></div>
+        <div class="grid" style="grid-template-columns:1fr" data-featured-repos></div>
+        <div style="height:10px"></div>
+        <a class="btn" href="projects.html">See all projects →</a>
+      </div>
+    </section>
+
+    <section style="margin-top:18px" class="card">
+      <h2>What I’m looking for</h2>
+      <p>
+        Add a short section describing the roles you want, industries you like, and the impact you aim for.
+      </p>
+      <div class="small">
+        Tip: keep this to 2–4 sentences. Make it concrete: scope, stack, and outcomes.
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span data-year></span> <span data-name></span></div>
+      <div class="small">Built for GitHub Pages</div>
+    </footer>
+  </main>
+</body>
+</html>
 
