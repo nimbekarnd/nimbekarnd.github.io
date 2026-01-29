@@ -22,4 +22,12 @@ fetch(`https://api.github.com/users/${RESUME_CONFIG.githubUsername}/repos?per_pa
         <small>${r.description||""}</small>
       </a>`).join("");
   }
+
+  if(pinned){
+    pinned.innerHTML = repos.slice(0,6).map(r=>`
+      <a class="card" href="${r.html_url}" target="_blank">
+        <strong>${r.name}</strong><br/>
+        <small>${r.description||""}</small>
+      </a>`).join("");
+  }
 });
