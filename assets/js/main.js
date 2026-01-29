@@ -1,3 +1,23 @@
+const RESUME_CONFIG = window.RESUME_CONFIG;
+if (!RESUME_CONFIG) {
+  console.error("RESUME_CONFIG not loaded. Check script order in HTML.");
+}
+
+// Wire buttons ASAP (before fetch)
+function wireLink(selector, url) {
+  const el = document.querySelector(selector);
+  if (!el) return;
+
+  if (url && url.trim() !== "") {
+    el.href = url;
+  } else {
+    el.style.display = "none";
+  }
+}
+
+wireLink("[data-link-linkedin]", RESUME_CONFIG?.links?.linkedin);
+wireLink("[data-link-github]", RESUME_CONFIG?.links?.github);
+
 // Load repos
 fetch(`https://api.github.com/users/${RESUME_CONFIG.githubUsername}/repos?per_page=100&sort=updated`)
   .then(r => r.json())
@@ -12,58 +32,12 @@ fetch(`https://api.github.com/users/${RESUME_CONFIG.githubUsername}/repos?per_pa
         <small>${escapeHtml(r.description || "")}</small>
       </a>`;
 
-    if (featured) {
-      featured.innerHTML = repos.slice(0, 6).map(cardHTML).join("");
-    }
-
-    if (pinned) {
-      pinned.innerHTML = repos.slice(6, 12).map(cardHTML).join(""); // different slice
-    }
-
-    if (moreRepo) {
-      moreRepo.innerHTML = repos.slice(12, 24).map(cardHTML).join(""); // different slice
-    }
+    if (featured) featured.innerHTML = repos.slice(0, 6).map(cardHTML).join("");
+    if (pinned) pinned.innerHTML = repos.slice(6, 12).map(cardHTML).join("");
+    if (moreRepo) moreRepo.innerHTML = repos.slice(12, 24).map(cardHTML).join("");
   })
   .catch(err => console.error("GitHub API error:", err));
 
-// // Wire buttons
-// const linkedinBtn = document.querySelector("[data-link-linkedin]");
-// const gitBtn = document.querySelector("[data-link-github]");
-
-// if (linkedinBtn) {
-//   const url = RESUME_CONFIG?.links?.linkedin;
-//   if (url) linkedinBtn.href = url;
-//   else linkedinBtn.style.display = "none";
-// }
-
-// if (gitBtn) {
-//   const url = RESUME_CONFIG?.links?.github;
-//   if (url) gitBtn.href = url;
-//   else gitBtn.style.display = "none";
-// }
-
-function wireLink(selector, url) {
-  const el = document.querySelector(selector);
-  if (!el) return;
-
-  if (url && url.trim() !== "") {
-    el.href = url;
-  } else {
-    el.style.display = "none";
-  }
-}
-
-wireLink(
-  "[data-link-linkedin]",
-  window.RESUME_CONFIG?.links?.linkedin
-);
-
-wireLink(
-  "[data-link-github]",
-  window.RESUME_CONFIG?.links?.github
-);
-
-// Basic HTML escaping (prevents odd characters breaking markup)
 function escapeHtml(s) {
   return String(s)
     .replaceAll("&", "&amp;")
