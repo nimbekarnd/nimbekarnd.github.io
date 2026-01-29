@@ -4,7 +4,7 @@ fetch(`https://api.github.com/users/${RESUME_CONFIG.githubUsername}/repos?per_pa
 .then(repos=>{
   const featured = document.querySelector("[data-featured-repos]");
   if(featured){
-    featured.innerHTML = repos.slice(0,3).map(r=>`
+    featured.innerHTML = repos.slice(0,6).map(r=>`
       <a class="card" href="${r.html_url}" target="_blank">
         <strong>${r.name}</strong><br/>
         <small>${r.description||""}</small>
