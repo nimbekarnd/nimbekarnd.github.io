@@ -1,1 +1,70 @@
-body{font-family:system-ui;background:#0b1020;color:#e8eeff;margin:0;padding:20px} .card{background:#121a33;padding:16px;border-radius:12px;margin-bottom:12px} .nav a{margin-right:10px;color:#9fb0d0;text-decoration:none} .btn{padding:10px 14px;border:1px solid #7aa2ff;border-radius:10px;color:#e8eeff;text-decoration:none}
+body{
+  font-family:system-ui;
+  background:#0b1020;
+  color:#e8eeff;
+  margin:0;
+  padding:20px;
+}
+
+/* Nav */
+.nav a{
+  margin-right:10px;
+  color:#9fb0d0;
+  text-decoration:none;
+}
+
+/* Buttons */
+.btn{
+  padding:10px 14px;
+  border:1px solid #7aa2ff;
+  border-radius:10px;
+  color:#e8eeff;
+  text-decoration:none;
+}
+
+/* Grid spacing for repos */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:18px;              /* spacing between cards */
+  margin-top:12px;       /* spacing below headings */
+}
+
+/* Card layout */
+.card{
+  background:#121a33;
+  padding:16px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  text-decoration:none;  /* anchors look like cards */
+  color:inherit;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:140px;      /* keeps cards aligned */
+}
+
+/* Card hover */
+.card:hover{
+  transform:translateY(-2px);
+  transition:140ms ease;
+  border-color:rgba(122,162,255,0.35);
+}
+
+/* Optional: nicer text inside cards */
+.card strong{
+  display:block;
+  margin-bottom:8px;
+  font-size:16px;
+}
+.card small{
+  color:#9fb0d0;
+  line-height:1.4;
+}
+.card p{
+  flex-grow:1;
+  margin:0;
+  margin-bottom:12px;
+  line-height:1.4;
+}
