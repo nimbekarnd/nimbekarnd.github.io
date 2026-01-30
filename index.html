@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -8,6 +9,7 @@
   <script defer src="assets/js/config.js"></script>
   <script defer src="assets/js/main.js"></script>
 </head>
+
 <body>
   <header class="nav">
     <div class="nav-inner">
@@ -35,34 +37,67 @@
           <a class="btn" data-link-website target="_blank" rel="noreferrer">Website</a>
         </div>
 
-        <div class="btn" data-skills></div>
-      </div>
-
-      <div class="card">
-        <h2>Featured Projects</h2>
-        <div class="small">Selected repositories from my GitHub profile.</div>
-        <div style="height:12px"></div>
-        <div class="gridMainPage" data-featured-repos></div>
-        <div style="height:10px"></div>
-        <a class="btn" href="projects.html">See all projects →</a>
-      </div>
-    </section>
-
-    <section style="margin-top:18px" class="card">
-      <h2>What I’m looking for</h2>
-      <p>
-        I’m now looking forward to finding new, exciting challenges where I can contribute my skills and passion for robotics.
-      </p>
-      <div class="small">
-        Tip: keep this to 2–4 sentences. Make it concrete: scope, stack, and outcomes.
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div>© <span data-year></span> <span data-name></span></div>
-      <div class="small">Built for GitHub Pages</div>
-    </footer>
-  </main>
-</body>
-</html>
-
+        <div class="card" data-skills></div>
+        </div>
+        
+        <div class="card">
+          <h2>Featured Projects</h2>
+          <div class="small">Selected repositories from my GitHub profile.</div>
+          <div style="height:12px"></div>
+          <!-- <div class="gridMainPage" data-featured-repos></div> -->
+          <!-- Add one project here -->
+          <div class="gridMainPage">
+            <a class="card project-card" href="https://github.com/nimbekarnd/Traveling_salesman_with_charging" target="_blank"
+              rel="noreferrer">
+              <img class="project-img" src="assets/images/MST_Travling_salesman_icon.png" alt="Project screenshot">
+              <h3 class="project-title">Traveling Robot Challenge with Charging </h3>
+              <div class="project-sub">Python • Jupyter Notebook</div>
+              <p class="project-desc">The Traveling Salesman Problem (TSP) is a classic algorithmic challenge: given a list of
+                locations, find the shortest route that visits each location exactly once and returns to the start. However, in
+                many real-world scenarios — such as electric vehicles (EVs), drones, or robots — agents cannot simply travel
+                indefinitely. They must recharge periodically because of limited battery capacity. This variant is called the
+                Traveling Salesman Problem with Charging (TSP-C): find an optimal tour that not only minimizes total travel
+                distance or time but also schedules charging stops so the vehicle never runs out of energy.
+              </p>
+              <p class="project-desc">
+                In this context:
+              </p>
+              <p class="project-desc">
+                1. The agent has a limited energy budget that depletes as it travels between locations.
+              </p>
+              <p class="project-desc">
+                2. Certain nodes in the graph represent charging stations where the agent can recharge its battery.
+              </p>
+              <p class="project-desc">
+                3. The planner must balance detours for charging against overall route efficiency, a real-world constraint
+                absent in the standard TSP.
+              </p>
+              <div class="project-actions">
+                <span class="btn">View repo </span>
+              </div>
+            </a>
+          </div>
+          <div style="height:10px"></div>
+          <a class="btn" href="projects.html">See all projects →</a>
+        </div>
+        </section>
+        
+        <section style="margin-top:18px" class="card">
+          <h2>What I’m looking for</h2>
+          <p>
+            I’m now looking forward to finding new, exciting challenges where I can contribute my skills and passion for
+            robotics.
+          </p>
+          <div class="small">
+            Tip: keep this to 2–4 sentences. Make it concrete: scope, stack, and outcomes.
+          </div>
+        </section>
+        
+        <footer class="footer">
+          <div>© <span data-year></span> <span data-name></span></div>
+          <div class="small">Built for GitHub Pages</div>
+        </footer>
+        </main>
+        </body>
+        
+        </html>
