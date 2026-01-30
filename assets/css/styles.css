@@ -32,22 +32,22 @@ body{
   border-color:rgba(122,162,255,0.35);
 }
 
-/* Grid spacing for repos */
+/* Grid spacing for repos on the main page */
 .gridMainPage{
-  display:block;
-  flex-flow:row wrap;
-  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-  gap:100px;              /* spacing between cards */
-  margin-top:100px;       /* spacing below headings */
+  display:grid;
+  grid-template-columns: 1fr; /* one featured card on home */
+  gap:16px;
+  margin-top:12px;
 }
 
-/* Grid spacing for repos */
+/* Grid spacing for repos on the project page */
 .gridProjectsPage{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-  gap:100px;              /* spacing between cards */
-  margin-top:100px;       /* spacing below headings */
+  gap:18px;
+  margin-top:12px;
 }
+
 
 /* Card layout */
 .card{
@@ -92,11 +92,10 @@ body{
 .project-card{
   overflow:hidden;
   cursor: default;
-  animation: fadeUp 450ms ease both;
 }
 
 .project-img{
-  width:100%;
+  width:70%;
   height:150px;
   object-fit:cover;
   border-radius:10px;
