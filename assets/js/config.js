@@ -13,5 +13,5 @@ window.RESUME_CONFIG = {
     github: "https://github.com/nimbekarnd",
     linkedin: "https://www.linkedin.com/in/nimbekarnupur/"
   },
-  skills: ["JavaScript", "Python", "React", "Node.js", "SQL"]
+  skills: ["C++", "Python", "ROS 1", "Gazebo", "Unity3D", "Git", "Linux", "Computer Vision", "Path Planning", "SLAM"]
 };

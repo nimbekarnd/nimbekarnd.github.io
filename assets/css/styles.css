@@ -61,7 +61,7 @@ body{
   display:flex;
   align-content: center;
   flex-wrap: wrap-reverse;
-  flex-direction:row;
+  flex-direction:column;
   justify-content:center;
   min-height:140px;      /* keeps cards aligned */
 }
