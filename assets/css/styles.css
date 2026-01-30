@@ -25,12 +25,28 @@ body{
   text-decoration:none;
 }
 
+/* Buttons hover */
+.btn:hover{
+  transform:translateY(-2px);
+  transition:140ms ease;
+  border-color:rgba(122,162,255,0.35);
+}
+
 /* Grid spacing for repos */
-.grid{
+.gridMainPage{
+  display:block;
+  flex-flow:row wrap;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:100px;              /* spacing between cards */
+  margin-top:100px;       /* spacing below headings */
+}
+
+/* Grid spacing for repos */
+.gridProjectsPage{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
   gap:100px;              /* spacing between cards */
-  margin-top:60px;       /* spacing below headings */
+  margin-top:100px;       /* spacing below headings */
 }
 
 /* Card layout */
@@ -71,11 +87,4 @@ body{
   margin:0;
   margin-bottom:12px;
   line-height:1.4;
-}
-
-/* Buttons hover */
-.btn:hover{
-  transform:translateY(-2px);
-  transition:140ms ease;
-  border-color:rgba(122,162,255,0.35);
 }
