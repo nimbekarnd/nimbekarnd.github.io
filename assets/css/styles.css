@@ -95,25 +95,16 @@ body{
   justify-content: center;
 }
 
-.project-img{
-  width:100%;
-  height:500px;
-  /* object-fit:contain; */
-  object-position: left center;
-  border-radius:10px;
-  margin-bottom:12px;
-  border:1px solid rgba(255,255,255,0.08);
-}
-
 .project-title{
-  margin:0 0 6px;
+  margin:10px 10px;
   font-size:18px;
 }
 
 .project-sub{
   font-size:16px;
-  color:#9fb0d0;
+  color:#92acdd;
   font-style: italic;
+  margin:5px;
 }
 
 .project-desc{
@@ -145,25 +136,26 @@ body{
 
 /* Left image */
 .project-img-left{
-    width:600px;
-    height:600px;
+    width:350px;
+    height:350px;
     object-fit:cover;      /* keeps uniform size */
     border-radius:10px;
     border:1px solid rgba(255,255,255,0.12);
     background:#0b1020;
 }
 
-.project-card:hover .project-img-left{
+.project-card:hover{
   transform:scale(1.03);
   transition:150ms ease;
   border-color: rgba(122,162,255,0.35);
 }
-/* Right content
+
+/* Right content */
 .project-content{
   display:flex;
   flex-direction:column;
   justify-content:center;
-} */
+}
 
 /* Slightly tighter spacing for home page */
 .project-card.horizontal .project-title .project-sub .project-desc{
