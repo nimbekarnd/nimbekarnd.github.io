@@ -49,17 +49,18 @@ function renderHomeFeatured() {
   const wrap = document.querySelector("[data-featured-manual]");
   if (!wrap) return;
 
-  const p = window.RESUME_CONFIG?.featuredProjects?.[0];
-  if (!p) return;
+  const projects = window.RESUME_CONFIG?.featuredProjects || [];
+  if (!projects.length) return;
 
-  wrap.innerHTML = `
+  wrap.innerHTML = projects.map(p => `
     <a class="card project-card" href="${p.repoUrl}" target="_blank" rel="noreferrer">
-      ${p.image ? `<img class="project-img" src="${p.image}" alt="${p.title}">` : ""}
-      <h3 class="project-title">${p.title}</h3>
-      ${p.subtitle ? `<div class="project-sub">${p.subtitle}</div>` : ""}
-      <p class="project-desc">${p.description || ""}</p>
+      ${p.image ? `<img class="project-img" src="${p.image}" alt="${escapeHtml(p.title)}">` : ""}
+      <h3 class="project-title">${escapeHtml(p.title)}</h3>
+      ${p.subtitle ? `<div class="project-sub">${escapeHtml(p.subtitle)}</div>` : ""}
+      <p class="project-desc">${escapeHtml(p.description || "")}</p>
       <div class="project-actions"><span class="btn">View repo →</span></div>
     </a>
-  `;
+  `).join("");
 }
 renderHomeFeatured();
+
