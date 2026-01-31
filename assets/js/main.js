@@ -22,7 +22,6 @@ wireLink("[data-link-github]", RESUME_CONFIG?.links?.github);
 fetch(`https://api.github.com/users/${RESUME_CONFIG.githubUsername}/repos?per_page=100&sort=updated`)
   .then(r => r.json())
   .then(repos => {
-    const featured = document.querySelector("[data-featured-manual]");
     const pinned = document.querySelector("[data-pinned-repos]");
     const moreRepo = document.querySelector("[data-more-repos]");
 
@@ -32,7 +31,6 @@ fetch(`https://api.github.com/users/${RESUME_CONFIG.githubUsername}/repos?per_pa
         <small>${escapeHtml(r.description || "")}</small>
       </a>`;
 
-    if (featured) featured.innerHTML = repos.slice(0, 6).map(cardHTML).join("");
     if (pinned) pinned.innerHTML = repos.slice(6, 12).map(cardHTML).join("");
     if (moreRepo) moreRepo.innerHTML = repos.slice(12, 24).map(cardHTML).join("");
   })
