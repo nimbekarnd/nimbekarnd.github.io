@@ -113,6 +113,7 @@ body{
 .project-sub{
   font-size:16px;
   color:#9fb0d0;
+  font-style: italic;
 }
 
 .project-desc{
@@ -134,30 +135,29 @@ body{
   border-color: rgba(122,162,255,0.35);
 } */
 
+
+.project-card.horizontal{
+    display:grid;
+    grid-template-columns: 80% 1fr; /* image | content */
+    gap:16px;
+    align-items:center;
+}
+
+/* Left image */
+.project-img-left{
+    width:600px;
+    height:600px;
+    object-fit:cover;      /* keeps uniform size */
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.12);
+    background:#0b1020;
+}
+
 .project-card:hover .project-img-left{
   transform:scale(1.03);
   transition:150ms ease;
   border-color: rgba(122,162,255,0.35);
 }
-
-
-.project-card.horizontal{
-  display:grid;
-  grid-template-columns: 80% 1fr; /* image | content */
-  gap:16px;
-  align-items:center;
-}
-
-/* Left image */
-.project-img-left{
-  width:400px;
-  height:400px;
-  object-fit:cover;      /* keeps uniform size */
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,0.12);
-  background:#0b1020;
-}
-
 /* Right content
 .project-content{
   display:flex;
