@@ -46,3 +46,22 @@ function escapeHtml(s) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
+
+function renderHomeFeatured() {
+  const wrap = document.querySelector("[data-featured-manual]");
+  if (!wrap) return;
+
+  const p = window.RESUME_CONFIG?.featuredProjects?.[0];
+  if (!p) return;
+
+  wrap.innerHTML = `
+    <a class="card project-card" href="${p.repoUrl}" target="_blank" rel="noreferrer">
+      ${p.image ? `<img class="project-img" src="${p.image}" alt="${p.title}">` : ""}
+      <h3 class="project-title">${p.title}</h3>
+      ${p.subtitle ? `<div class="project-sub">${p.subtitle}</div>` : ""}
+      <p class="project-desc">${p.description || ""}</p>
+      <div class="project-actions"><span class="btn">View repo →</span></div>
+    </a>
+  `;
+}
+renderHomeFeatured();
