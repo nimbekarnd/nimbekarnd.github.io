@@ -1,6 +1,6 @@
 window.RESUME_CONFIG = {
   githubUsername: "nimbekarnd",
-  featuredRepos: [
+  featuredProjects: [
     {
       title: "Traveling Robot Challenge with Charging ",
       subtitle: "Python • Jupyter Notebook",
