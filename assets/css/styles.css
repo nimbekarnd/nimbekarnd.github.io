@@ -168,7 +168,7 @@ body{
 }
 
 /* Slightly tighter spacing for home page */
-.project-card.horizontal .project-desc{
+.project-card.horizontal .project-title .project-sub .project-desc{
   margin-bottom:10px;
 }
 
