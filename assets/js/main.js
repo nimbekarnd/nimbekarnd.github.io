@@ -53,14 +53,29 @@ function renderHomeFeatured() {
   if (!projects.length) return;
 
   wrap.innerHTML = projects.map(p => `
-    <a class="card project-card" href="${p.repoUrl}" target="_blank" rel="noreferrer">
-      ${p.image ? `<img class="project-img" src="${p.image}" alt="${escapeHtml(p.title)}">` : ""}
+  <a class="card project-card horizontal"
+     href="${p.repoUrl}"
+     target="_blank"
+     rel="noreferrer">
+
+    ${p.image ? `
+      <img class="project-img-left"
+           src="${p.image}"
+           alt="${escapeHtml(p.title)}">
+    ` : ""}
+
+    <div class="project-content">
       <h3 class="project-title">${escapeHtml(p.title)}</h3>
       ${p.subtitle ? `<div class="project-sub">${escapeHtml(p.subtitle)}</div>` : ""}
       <p class="project-desc">${escapeHtml(p.description || "")}</p>
-      <div class="project-actions"><span class="btn">View repo →</span></div>
-    </a>
-  `).join("");
+      <div class="project-actions">
+        <span class="btn">View repo →</span>
+      </div>
+    </div>
+
+  </a>
+`).join("");
+
 }
 renderHomeFeatured();
 

@@ -129,12 +129,60 @@ body{
   flex-wrap:wrap;
 }
 
-/* Hover animation */
+/* Hover animation
 .project-card:hover{
   transform: translateY(-4px);
   transition: 180ms ease;
   border-color: rgba(122,162,255,0.35);
+} */
+
+.project-card:hover .project-img-left{
+  transform:scale(1.03);
+  transition:150ms ease;
+  border-color: rgba(122,162,255,0.35);
 }
+
+
+.project-card.horizontal{
+  display:grid;
+  grid-template-columns: 160px 1fr; /* image | content */
+  gap:16px;
+  align-items:center;
+}
+
+/* Left image */
+.project-img-left{
+  width:160px;
+  height:120px;
+  object-fit:cover;      /* keeps uniform size */
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:#0b1020;
+}
+
+/* Right content */
+.project-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* Slightly tighter spacing for home page */
+.project-card.horizontal .project-desc{
+  margin-bottom:10px;
+}
+
+@media (max-width: 640px){
+  .project-card.horizontal{
+    grid-template-columns: 1fr;
+  }
+
+  .project-img-left{
+    width:100%;
+    height:160px;
+  }
+}
+
 
 /* Entry animation */
 @keyframes fadeUp{
