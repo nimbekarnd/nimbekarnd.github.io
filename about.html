@@ -1,54 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>About</title>
-  <link rel="stylesheet" href="assets/css/styles.css"/>
-  <script defer src="assets/js/config.js"></script>
-  <script defer src="assets/js/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Nupur Nimbekar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="nav">
-  <div class="nav-inner">
-    <div class="brand">
-      <div class="name" data-brand-name></div>
-      <div class="title" data-brand-title></div>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Nupur Nimbekar</a>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link nav-cta">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
     </nav>
-  </div>
-</header>
 
-<main class="container">
-  <section class="card">
-    <h1>About Me</h1>
-    <p>
-      I am a Robotics Software Engineer specializing in autonomy, perception, and planning for robotic systems, 
-      with experience in both industry and research. At Vecna Robotics, I contributed to the development of autonomous 
-      forklifts and high-reach warehouse robots, focusing on task planning, congestion management, and the design of 
-      sensor driver wrappers for lidars and cameras. My work has directly improved warehouse workflows, increased 
-      pallet throughput, and enhanced the scalability and reliability of the autonomy stack across multiple platforms.
-    </p>
-    <p>
-      Previously, as a Computer Vision Engineer Intern at Vidalign, I built vision pipelines for 3D reconstruction 
-      with monocular cameras, improved facial landmark detection, and contributed to real-time 3D mesh generation. 
-      During my graduate research at the University of Maryland, I developed novel coverage path planning algorithms, 
-      demonstrating improvements in accuracy and efficiency over traditional methods. I also gained experience in 
-      machine learning and perception through projects involving neural networks for drug prediction, CNN-based image 
-      classification, and OpenCV-based vision tasks such as optical flow, lane detection, and segmentation.
-    </p>
-    <p>
-      I hold an M.Eng. in Robotics from the University of Maryland and a B.Tech. in Electronics Engineering from SNDT 
-      Women’s University. My technical strengths include C++, Python, ROS, and computer vision frameworks, and I am 
-      passionate about designing scalable robotic systems that solve real-world industrial challenges.
-    </p>
-    <div class="btn" data-skills></div>
-  </section>
-</main>
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">About Me</h1>
+            <p class="page-subtitle">Robotics engineer passionate about intelligent autonomous systems</p>
+        </div>
+    </section>
+
+    <section class="about-content-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-main">
+                    <h2 class="content-heading">Who I Am</h2>
+                    <p class="content-text">
+                        I'm a Robotics Software Engineer with over 3 years of experience developing production-grade autonomous systems. My work focuses on the intersection of perception, planning, and control—building robots that can navigate complex environments, make intelligent decisions, and work alongside humans safely and efficiently.
+                    </p>
+                    <p class="content-text">
+                        At Vecna Robotics, I've had the privilege of working on warehouse automation systems that operate in real-world, high-stakes environments. I've led development of features that reduced robot contention by 25%, improved detection accuracy to 95%, and cut facility integration time by 30%. These aren't just numbers—they represent hundreds of hours of on-site debugging, countless edge cases handled, and real impact on warehouse operations.
+                    </p>
+                    <p class="content-text">
+                        My technical foundation spans the full robotics stack: from low-level sensor processing (LiDAR, cameras, IMUs) to high-level task planning and multi-robot coordination. I'm comfortable diving deep into point cloud algorithms, tuning PID controllers, or architecting distributed systems with ROS and Docker.
+                    </p>
+                    <h2 class="content-heading">What Drives Me</h2>
+                    <p class="content-text">
+                        I'm fascinated by the challenge of making robots that work reliably in messy, unpredictable environments. Simulation is one thing, but building systems that handle real-world variability—bad lighting, sensor noise, humans behaving unexpectedly—that's where the interesting problems live.
+                    </p>
+                    <p class="content-text">
+                        I believe the future of robotics isn't just about individual robots getting smarter, but about fleets of robots that can coordinate, learn from each other, and gracefully handle failure. That's the direction I want to push the field.
+                    </p>
+                </div>
+                <div class="about-sidebar">
+                    <div class="education-section">
+                        <h3 class="sidebar-heading">Education</h3>
+                        <div class="education-item">
+                            <h4 class="degree">M.Eng. in Robotics</h4>
+                            <p class="school">University of Maryland, College Park</p>
+                            <p class="year">2020 - 2021</p>
+                        </div>
+                        <div class="education-item">
+                            <h4 class="degree">B.Tech. in Electronics Engineering</h4>
+                            <p class="school">SNDT Women's University, India</p>
+                            <p class="year">2016 - 2020</p>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3 class="sidebar-heading">Core Skills</h3>
+                        <div class="skills-list">
+                            <div class="skill-group">
+                                <h4 class="skill-group-title">Languages</h4>
+                                <p>C++, Python, C#, MATLAB</p>
+                            </div>
+                            <div class="skill-group">
+                                <h4 class="skill-group-title">Frameworks</h4>
+                                <p>ROS, PyTorch, OpenCV, NumPy, SciPy</p>
+                            </div>
+                            <div class="skill-group">
+                                <h4 class="skill-group-title">Robotics</h4>
+                                <p>SLAM, Path Planning, Perception, Sensor Fusion</p>
+                            </div>
+                            <div class="skill-group">
+                                <h4 class="skill-group-title">Tools</h4>
+                                <p>Git, Docker, CI/CD, Gazebo, Rviz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3 class="footer-name">Nupur Nimbekar</h3>
+                    <p class="footer-tagline">Robotics Software Engineer</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/nimbekarnd" target="_blank" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nimbekarnupur/" target="_blank" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="mailto:ndnupur@terpmail.umd.edu" aria-label="Email">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Navigation</h4>
+                        <ul class="footer-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="experience.html">Experience</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Contact</h4>
+                        <ul class="footer-list">
+                            <li><a href="mailto:ndnupur@terpmail.umd.edu">Email Me</a></li>
+                            <li><a href="tel:3017424123">Call Me</a></li>
+                            <li><a href="contact.html">Contact Form</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nupur Nimbekar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
