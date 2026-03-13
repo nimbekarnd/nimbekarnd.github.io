@@ -38,8 +38,9 @@
     <!-- Hero Section - Enhanced -->
     <section class="hero-enhanced">
         <div class="hero-background">
-        <video class="hero-video-bg" autoplay muted loop playsinline>
-            <source src="data/Robot_moving.mp4" type="video/mp4"></video>
+            <video class="hero-video-bg" autoplay muted loop playsinline>
+                <source src="data/Robot_moving.mp4" type="video/mp4">
+            </video>
 
             <div class="grid-overlay"></div>
             <div class="gradient-orb orb-1"></div>
@@ -100,6 +101,31 @@
             <div class="tech-item">OpenCV</div>
             <div class="tech-item">Point Clouds</div>
             <div class="tech-item">LiDAR</div>
+        </div>
+    </section>
+
+    <!-- Active Projects Section -->
+    <section class="active-projects-section">
+        <div class="container">
+            <div class="active-projects-header">
+                <div class="active-projects-title-group">
+                    <span class="active-live-pill">
+                        <span class="active-live-dot"></span>
+                        Live on GitHub
+                    </span>
+                    <h2 class="active-projects-title">Active Projects</h2>
+                    <p class="active-projects-subtitle">Currently in development — pulled live from GitHub</p>
+                </div>
+            </div>
+
+            <div class="active-projects-grid" id="active-projects-grid">
+                <!-- Skeleton loaders shown while fetching -->
+                <div class="active-card skeleton"></div>
+                <div class="active-card skeleton"></div>
+                <div class="active-card skeleton"></div>
+            </div>
+
+            <p class="active-projects-note" id="active-projects-note"></p>
         </div>
     </section>
 
@@ -316,7 +342,8 @@
                     <div class="impact-card">
                         <div class="impact-number">30%</div>
                         <div class="impact-label">Introduced compact integration cycles for high priority feature
-                            development with limited time constraints and cut down the deployment time by about 30%.</div>
+                            development with limited time constraints and cut down the deployment time by about 30%.
+                        </div>
                     </div>
                     <div class="impact-card">
                         <div class="impact-number">48hrs</div>
@@ -407,6 +434,113 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        (async () => {
+            const grid = document.getElementById('active-projects-grid');
+            const note = document.getElementById('active-projects-note');
+            const GITHUB_USER = 'nimbekarnd';
+
+            // Projects you're actively developing — add/remove repo names here
+            const ACTIVE_REPOS = [
+                'Voronoi_UV_Sterlization',
+                'Traveling_salesman_with_charging',
+                'Wall-follower-in-ROS-using-Python',
+                'Lucas-Kanade-tracker-Python',
+                'A-star-algorithm',
+            ];
+
+            // Language color map
+            const LANG_COLORS = {
+                'Python': '#3572A5',
+                'C++': '#f34b7d',
+                'C': '#555555',
+                'Jupyter Notebook': '#DA5B0B',
+                'JavaScript': '#f1e05a',
+                'TypeScript': '#2b7489',
+                'Shell': '#89e051',
+            };
+
+            function timeAgo(dateStr) {
+                const diff = Date.now() - new Date(dateStr).getTime();
+                const days = Math.floor(diff / 86400000);
+                if (days === 0) return 'today';
+                if (days === 1) return 'yesterday';
+                if (days < 30) return `${days} days ago`;
+                const months = Math.floor(days / 30);
+                if (months < 12) return `${months} month${months > 1 ? 's' : ''} ago`;
+                return `${Math.floor(months / 12)} year${Math.floor(months / 12) > 1 ? 's' : ''} ago`;
+            }
+
+            function formatDate(dateStr) {
+                return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            }
+
+            function renderCard(repo) {
+                const langColor = LANG_COLORS[repo.language] || '#64748b';
+                const updatedAgo = timeAgo(repo.pushed_at);
+                const isRecent = (Date.now() - new Date(repo.pushed_at).getTime()) < 30 * 86400000;
+
+                return `
+        <a href="${repo.html_url}" target="_blank" class="active-card">
+            <div class="active-card-bar"></div>
+            <div class="active-card-body">
+                <div class="active-card-top">
+                    <div class="active-card-status">
+                        <span class="active-pulse-dot ${isRecent ? 'recent' : ''}"></span>
+                        <span class="active-card-label">In Development</span>
+                    </div>
+                    <span class="active-card-updated">Updated ${updatedAgo}</span>
+                </div>
+
+                <h3 class="active-card-title">${repo.name.replace(/-|_/g, ' ')}</h3>
+                <p class="active-card-desc">${repo.description || 'No description available.'}</p>
+
+                <div class="active-card-footer">
+                    <div class="active-card-meta">
+                        ${repo.language ? `
+                        <span class="active-card-lang">
+                            <span class="lang-dot" style="background:${langColor}"></span>
+                            ${repo.language}
+                        </span>` : ''}
+                        ${repo.stargazers_count > 0 ? `
+                        <span class="active-card-stars">
+                            ★ ${repo.stargazers_count}
+                        </span>` : ''}
+                    </div>
+                    <span class="active-card-date">
+                        Since ${formatDate(repo.created_at)}
+                    </span>
+                </div>
+            </div>
+        </a>`;
+            }
+
+            try {
+                const results = await Promise.all(
+                    ACTIVE_REPOS.map(name =>
+                        fetch(`https://api.github.com/repos/${GITHUB_USER}/${name}`)
+                            .then(r => r.ok ? r.json() : null)
+                            .catch(() => null)
+                    )
+                );
+
+                const repos = results
+                    .filter(Boolean)
+                    .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+
+                if (repos.length === 0) {
+                    grid.innerHTML = '<p class="active-empty">No active projects found.</p>';
+                    return;
+                }
+
+                grid.innerHTML = repos.map(renderCard).join('');
+                note.textContent = `Showing ${repos.length} active repositor${repos.length > 1 ? 'ies' : 'y'} · Last synced just now`;
+
+            } catch (err) {
+                grid.innerHTML = '<p class="active-empty">Unable to load projects right now.</p>';
+            }
+        })();
+    </script>
 </body>
 
 </html>
