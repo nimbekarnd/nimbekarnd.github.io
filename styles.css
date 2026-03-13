@@ -105,7 +105,8 @@ body {
     transition: var(--transition);
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: var(--color-primary);
 }
 
@@ -202,16 +203,21 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;       /* fills the section, no black bars */
-    opacity: 0.18;           /* translucency — adjust between 0.1–0.3 */
-    z-index: 0;              /* behind the grid/orbs/content */
-    pointer-events: none;    /* can't accidentally click it */
+    object-fit: cover;
+    /* fills the section, no black bars */
+    opacity: 0.18;
+    /* translucency — adjust between 0.1–0.3 */
+    z-index: 0;
+    /* behind the grid/orbs/content */
+    pointer-events: none;
+    /* can't accidentally click it */
 }
 
 .hero-background {
     position: absolute;
     inset: 0;
-    overflow: hidden;        /* clips video to the section bounds */
+    overflow: hidden;
+    /* clips video to the section bounds */
 }
 
 .btn {
@@ -351,7 +357,9 @@ body {
 /* ===========================
    Sections
    =========================== */
-.featured-projects, .expertise, .cta-section {
+.featured-projects,
+.expertise,
+.cta-section {
     padding: 6rem 0;
 }
 
@@ -800,7 +808,8 @@ body {
     color: var(--color-text);
 }
 
-.education-section, .skills-section {
+.education-section,
+.skills-section {
     padding: 2rem;
     background: var(--color-bg-secondary);
     border-radius: 12px;
@@ -1048,9 +1057,12 @@ body {
    Animations
    =========================== */
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -1063,19 +1075,19 @@ body {
     .hero-container {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-image {
         display: none;
     }
-    
+
     .project-card-detailed {
         grid-template-columns: 1fr;
     }
-    
+
     .about-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
     }
@@ -1094,51 +1106,61 @@ body {
         border-bottom: 1px solid var(--color-border);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
     .nav-toggle {
         display: flex;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .page-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
-    
+
+    .page-header {
+        padding: 6rem 0 2.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
     .section-title {
         font-size: 2rem;
     }
-    
-    .hero-cta, .cta-buttons {
+
+    .hero-cta,
+    .cta-buttons {
         flex-direction: column;
     }
-    
+
     .stats-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .project-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .expertise-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .timeline::before {
         left: 10px;
     }
-    
+
     .timeline-item {
         padding-left: 3rem;
     }
-    
+
     .timeline-dot {
         left: 2px;
     }
@@ -1148,14 +1170,22 @@ body {
     .container {
         padding: 0 1rem;
     }
-    
+
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .page-header {
+        padding: 5.5rem 0 2rem;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
     }
 }
 
@@ -1342,6 +1372,7 @@ body {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -1647,6 +1678,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1657,6 +1689,7 @@ body {
     0% {
         transform: translate(0, 0);
     }
+
     100% {
         transform: translate(50px, 50px);
     }
@@ -1667,32 +1700,45 @@ body {
     .hero-title-enhanced {
         font-size: 2.5rem;
     }
-    
+
     .hero-stats-inline {
         flex-direction: column;
         gap: 1.5rem;
     }
-    
+
     .hero-cta-enhanced,
     .cta-buttons-enhanced {
         flex-direction: column;
     }
-    
+
     .btn-large {
         width: 100%;
         justify-content: center;
     }
-    
+
     .projects-grid-featured {
         grid-template-columns: 1fr;
     }
-    
+
     .impact-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .section-title-enhanced,
     .cta-title-enhanced {
         font-size: 2rem;
+    }
+
+    .page-header {
+        padding: 6rem 0 2.5rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 }
