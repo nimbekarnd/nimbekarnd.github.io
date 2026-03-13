@@ -1187,6 +1187,24 @@ body {
     .page-title {
         font-size: 1.75rem;
     }
+
+    .timeline-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+        color: var(--color-text-tertiary);
+    }
+
+    .timeline-role {
+        font-size: 1.2rem;
+    }
+
+    .timeline-company {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 400px) {
@@ -1201,6 +1219,24 @@ body {
     .page-subtitle {
         font-size: 0.9rem;
         padding: 0 1rem;
+    }
+
+    .timeline-header {
+        flex-direction: column;
+        gap: 0.45rem;
+    }
+
+    .timeline-date {
+        font-size: 0.80rem;
+        color: var(--color-text-tertiary);
+    }
+
+    .timeline-role {
+        font-size: 1rem;
+    }
+
+    .timeline-company {
+        font-size: 1rem;
     }
 }
 
