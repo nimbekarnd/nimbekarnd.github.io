@@ -1189,6 +1189,21 @@ body {
     }
 }
 
+@media (max-width: 400px) {
+    .page-header {
+        padding: 5rem 0 1.75rem;
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+}
+
 /* ===========================
    Enhanced Homepage Styles
    =========================== */
