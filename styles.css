@@ -206,7 +206,7 @@ body {
     object-fit: cover;
     /* fills the section, no black bars */
     opacity: 0.18;
-    /* translucency — adjust between 0.1–0.3 */
+    /* translucency — adjust between 0.1-0.3 */
     z-index: 0;
     /* behind the grid/orbs/content */
     pointer-events: none;
